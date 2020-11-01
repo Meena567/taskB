@@ -15,8 +15,8 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 // Connect to Mongoose and set connection variable
-var dbString = 'mongodb://localhost/resthub' || "mongodb+srv://admin:admin@cluster0.q5dj9.mongodb.net/studentviewer?retryWrites=true&w=majority"
-mongoose.connect(dbString, { useNewUrlParser: true, useUnifiedTopology: true });
+var dbString = "mongodb://localhost/resthub" || "mongodb+srv://admin:admin@cluster0.q5dj9.mongodb.net/studentviewer?retryWrites=true&w=majority"
+mongoose.connect(dbString, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false, dbName: "studentviewer"});
 var db = mongoose.connection;
 
 // Added check for DB connection
